@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Bhaiyya Chicken Center</title>
+
+    <link rel="stylesheet" href="/frontend-assets/auth.css">
+    
+</head>
+
+<body>
+    <main class="auth-page">
+
+        <a href="index.html" class="back-link">
+            ← Back to Home
+        </a>
+
+        <section class="auth-card">
+
+            <div class="brand">
+                <div class="brand-icon">🍗</div>
+                <h1>Bhaiyya <span>Chicken Center</span></h1>
+                <p>Freshness you can trust.</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button type="button" class="tab active"
+                        id="customer-tab">
+                    Customer
+                </button>
+
+                <button type="button" class="tab"
+                        id="owner-tab">
+                    Owner
+                </button>
+            </div>
+
+            <div id="message" class="message" role="status"
+                 aria-live="polite"></div>
+
+            <!-- CUSTOMER LOGIN / SIGNUP -->
+
+            <section id="customer-section">
+
+                <h2 id="form-title">Welcome Back!</h2>
+                <p class="subtitle" id="form-subtitle">
+                    Login to order your favourite cuts.
+                </p>
+
+                <div class="mode-switch">
+                    <button type="button" id="login-mode"
+                            class="mode active">
+                        Login
+                    </button>
+
+                    <button type="button" id="signup-mode"
+                            class="mode">
+                        Create Account
+                    </button>
+                </div>
+
+                <form id="customer-form">
+
+                    <div class="form-group" id="name-group" hidden>
+                        <label for="customer-name">Full Name</label>
+                        <input
+                            type="text"
+                            id="customer-name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-email">Email Address</label>
+                        <input
+                            type="email"
+                            id="customer-email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-password">Password</label>
+                        <input
+                            type="password"
+                            id="customer-password"
+                            name="password"
+                            placeholder="Enter your password"
+                            minlength="8"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="submit-button"
+                            id="customer-submit">
+                        Login as Customer
+                    </button>
+
+                </form>
+            </section>
+
+            <!-- OWNER LOGIN -->
+
+            <section id="owner-section" hidden>
+
+                <h2>Owner Login</h2>
+                <p class="subtitle">
+                    Sign in to manage your shop and orders.
+                </p>
+
+                <form id="owner-form">
+
+                    <div class="form-group">
+                        <label for="owner-email">Owner Email</label>
+                        <input
+                            type="email"
+                            id="owner-email"
+                            name="email"
+                            placeholder="Enter owner email"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="owner-password">Password</label>
+                        <input
+                            type="password"
+                            id="owner-password"
+                            name="password"
+                            placeholder="Enter owner password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        Login to Dashboard
+                    </button>
+
+                </form>
+            </section>
+
+            <p class="security-note">
+                🔒 Your account information is protected.
+            </p>
+
+        </section>
+
+        <p class="page-footer">
+            © Bhaiyya Chicken Center
+        </p>
+
+    </main>
+
+    <script src="/frontend-assets/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaiyya Chicken Center</title>
+
+    <link rel="stylesheet" href="/frontend-assets/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="/" class="brand">
+            <img
+                src="/frontend-assets/images/logo.png"
+                alt="Bhaiyya Chicken Center Logo"
+                class="brand-icon"
+            >
+
+            <span>
+                <strong>Bhaiyya Chicken Center</strong>
+                <small>Freshness you can trust</small>
+            </span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Our Products</a>
+
+            <button class="cart-button" onclick="showCart()">
+                🛒 Cart <span id="cart-count">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <span class="eyebrow">
+                    HAR BITE MEIN ZABARDAST TASTE!
+                </span>
+
+                <h1>
+                     Quality Cuts.<br>
+                     <span>Trusted Orders.</span>
+                </h1>
+
+                <p>
+                    Choose your favourite cuts, place your order,
+                    and select a convenient pickup time.
+                </p>
+
+                <a href="#products" class="primary-button">
+                    Explore Products →
+                </a>
+
+                <div class="trust-line">
+                     Fresh cuts &nbsp;  , Easy ordering
+                </div>
+            </div>
+
+            <!-- Right-side Image -->
+            <div class="hero-visual">
+
+                <div class="food-circle">
+                    <img
+                        src="/frontend-assets/images/fresh-chicken.jpg"
+                        alt="Fresh chicken cuts"
+                        class="hero-chicken-image"
+                    >
+                </div>
+
+            
+
+            </div>
+
+        </section>
+
+        <!-- Benefits -->
+        <section class="benefits">
+
+            <div>
+                🥩
+                <span>
+                    <strong>Fresh Cuts</strong>
+                    <small>Choose your preferred cut</small>
+                </span>
+            </div>
+
+            <div>
+                🕒
+                <span>
+                    <strong>Planned Pickup</strong>
+                    <small>Select your pickup time</small>
+                </span>
+            </div>
+
+            <div>
+                🛍️
+                <span>
+                    <strong>Easy Ordering</strong>
+                    <small>Order from home</small>
+                </span>
+            </div>
+
+        </section>
+
+        <!-- Products -->
+        <section class="products-section" id="products">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">OUR SELECTION</span>
+                    <h2>Choose Your Cut</h2>
+                    <p>
+                        Find the cut you need for your next meal.
+                    </p>
+                </div>
+            </div>
+
+            <div id="product-list" class="product-grid">
+                <div class="loading-message">
+                    Loading fresh products...
+                </div>
+            </div>
+
+            <p id="product-message" class="message"></p>
+
+        </section>
+
+        <!-- Order Banner -->
+        <section class="order-banner">
+
+            <div>
+                <h2>Your order, your time.</h2>
+                <p>
+                    Choose your products and plan your pickup.
+                </p>
+            </div>
+
+            <a href="#products" class="secondary-button">
+                Order Now →
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <strong>Bhaiyya Chicken Center</strong>
+        <p>Fresh cuts. Convenient ordering.</p>
+        <small>© 2026 Bhaiyya Chicken Center</small>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <button class="close-button" onclick="closeCart()">
+                ✕
+            </button>
+
+            <h2>Your Cart 🛒</h2>
+
+            <div id="cart-items"></div>
+            <div id="cart-total" class="cart-total"></div>
+
+            <p id="cart-message" class="message"></p>
+
+            <button
+                id="checkout-button"
+                class="add-button"
+                onclick="proceedToCheckout()">
+                Proceed to Checkout →
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <button class="close-button" onclick="closeCheckout()">
+                 ✕
+            </button>
+
+            <h2>Customer Checkout</h2>
+
+                <form id="checkout-form">
+
+                <label>Customer Name</label>
+                <input type="text" id="customer-name"
+                    placeholder="Enter your name" required>
+
+                <label>Mobile Number</label>
+                <input type="tel" id="customer-mobile"
+                    placeholder="Enter mobile number"
+                    pattern="[0-9]{10}" maxlength="10" required>
+
+                <label>Pickup Date</label>
+                <input type="date" id="pickup-date" required>
+
+                <label>Pickup Time</label>
+                <input type="time" id="pickup-time" required>
+
+                <label>Payment Method</label>
+                <select id="payment-method" required>
+                    <option value="">Select payment method</option>
+                    <option value="cod">Cash on Pickup</option>
+                    <option value="upi">UPI</option>
+                    <option value="pay_later">Pay Later (Owner Approval)</option>
+                </select>
+
+                <div id="pay-later-section" class="hidden">
+                    <label>Expected Payment Date</label>
+                    <input type="date" id="payment-date">
+                </div>
+
+                <button type="submit" class="add-button">
+                    Place Order
+                </button>
+
+            </form>
+
+        </div>
+
+   </div>
+
+    <script src="/frontend-assets/app.js"></script>
+
+</body>
+</html>
